@@ -48,12 +48,10 @@ public class Main {
         }
 
         for (Person person: Office.getMembers()) {
-            if (person instanceof Student) {
-                Student student = (Student)person;
+            if (person instanceof Student student) {
                 System.out.println(student.getName() + "'s GPA: " + String.format("%2f", student.calculateGPA()));
             }
-            if (person instanceof Teacher) {
-                Teacher teacher = (Teacher)person;
+            if (person instanceof Teacher teacher) {
                 if(teacher.getYearsOfExperience() > 10) {
                 System.out.println(teacher.getName() + "'s salary before rise: " + teacher.getSalary() + "." + "After the rise: " + teacher.giveRaise(20));
                 }

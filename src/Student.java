@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Student extends Person {
     private static int id_gen = 1;
-    private int studentID;
-    private ArrayList<Integer> grades;
+    private final int studentID;
+    private final ArrayList<Integer> grades;
 
     public Student(String name, String surname, int age, boolean gender) {
         super(name, surname, age, gender);
@@ -24,7 +24,7 @@ public class Student extends Person {
         for(int grade : grades) {
             total += grade;
         }
-        return grades.size() > 0 ? (double) total / grades.size() : 0.0;
+        return !grades.isEmpty() ? (double) total / grades.size() : 0.0;
     }
 
     @Override

@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Office {
-    private ArrayList<Person> members;
+    private final ArrayList<Person> members;
 
     public Office() {
         members = new ArrayList<>();
@@ -16,7 +17,7 @@ public class Office {
     }
 
     public void sortMembers() {
-        members.sort((p1, p2) -> p1.getSurname().compareTo(p2.getSurname()));
+        members.sort(Comparator.comparing(Person::getSurname));
     }
 
     public void print() {
